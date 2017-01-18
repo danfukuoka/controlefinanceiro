@@ -9,6 +9,8 @@ using System.Web.Mvc;
 using ControleFinanceiro1.DAL;
 using ControleFinanceiro1.Models;
 
+using PagedList;
+
 namespace ControleFinanceiro1.Controllers
 {
     public class ComprasController : Controller
@@ -25,11 +27,117 @@ namespace ControleFinanceiro1.Controllers
         }
 
         // GET: Compras
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string searchString, string page)
         {
-            //var compras = db.Compras.Include(c => c.Categoria).Include(c => c.Estabelecimento);
 
-            return View(compraRepository.GetCompras());
+            int itens_por_pagina = 5;
+            int num_pages = 0;
+        
+            var compras = compraRepository.GetCompras();
+
+            //Filtro
+            ViewBag.CurrentFilter = searchString;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                compras = compras.Where(s => s.Categoria.Nome.Contains(searchString)
+                                       || s.Estabelecimento.Nome.Contains(searchString));
+            }
+
+            //Paginação
+            if (String.IsNullOrEmpty(page))
+            {
+                page = "1";
+            }
+
+            num_pages = compras.Count() / itens_por_pagina;
+            if ((compras.Count() % itens_por_pagina) != 0)
+            {
+                num_pages = num_pages + 1;
+            }
+
+            ViewBag.num_pages = num_pages;
+            ViewBag.page = Int32.Parse(page);
+
+            compras = compras.Skip((Int32.Parse(page) - 1) * itens_por_pagina).Take(itens_por_pagina);
+
+            //Ordenação
+            ViewBag.SortParm = sortOrder;
+
+            if (String.IsNullOrEmpty(sortOrder))
+            {
+                ViewBag.CategoriaSortParm = "categoria_name";
+                ViewBag.EstabelicimentoSortParm = "estabelicimento_name";
+                ViewBag.ValorSortParm = "valor";
+                ViewBag.DateSortParm = "date";
+            }
+
+            switch (sortOrder)
+            {
+                case "categoria_name":
+                    compras = compras.OrderBy(s => s.Categoria.Nome);
+                    ViewBag.CategoriaSortParm = "categoria_name_desc";
+                    ViewBag.EstabelicimentoSortParm = "estabelicimento_name";
+                    ViewBag.ValorSortParm = "valor";
+                    ViewBag.DateSortParm = "date";
+                    break;
+                case "categoria_name_desc":
+                    compras = compras.OrderByDescending(s => s.Categoria.Nome);
+                    ViewBag.CategoriaSortParm = "categoria_name";
+                    ViewBag.EstabelicimentoSortParm = "estabelicimento_name";
+                    ViewBag.ValorSortParm = "valor";
+                    ViewBag.DateSortParm = "date";
+                    break;
+                case "estabelicimento_name":
+                    compras = compras.OrderBy(s => s.Estabelecimento.Nome);
+                    ViewBag.EstabelicimentoSortParm = "estabelicimento_name_desc";
+                    ViewBag.CategoriaSortParm = "categoria_name";
+                    ViewBag.ValorSortParm = "valor";
+                    ViewBag.DateSortParm = "date";
+                    break;
+                case "estabelicimento_name_desc":
+                    compras = compras.OrderByDescending(s => s.Estabelecimento.Nome);
+                    ViewBag.EstabelicimentoSortParm = "estabelicimento_name";
+                    ViewBag.CategoriaSortParm = "categoria_name";
+                    ViewBag.ValorSortParm = "valor";
+                    ViewBag.DateSortParm = "date";
+                    break;
+                case "valor":
+                    compras = compras.OrderBy(s => s.Valor);
+                    ViewBag.ValorSortParm = "valor_desc";
+                    ViewBag.CategoriaSortParm = "categoria_name";
+                    ViewBag.EstabelicimentoSortParm = "estabelicimento_name";
+                    ViewBag.DateSortParm = "date";
+                    break;
+                case "valor_desc":
+                    compras = compras.OrderByDescending(s => s.Valor);
+                    ViewBag.ValorSortParm = "valor";
+                    ViewBag.CategoriaSortParm = "categoria_name";
+                    ViewBag.EstabelicimentoSortParm = "estabelicimento_name";
+                    ViewBag.DateSortParm = "date";
+                    break;
+                case "date":
+                    compras = compras.OrderBy(s => s.Data);
+                    ViewBag.DateSortParm = "date_desc";
+                    ViewBag.CategoriaSortParm = "categoria_name";
+                    ViewBag.EstabelicimentoSortParm = "estabelicimento_name";
+                    ViewBag.ValorSortParm = "valor";
+
+                    break;
+                case "date_desc":
+                    compras = compras.OrderByDescending(s => s.Data);
+                    ViewBag.DateSortParm = "date";
+                    ViewBag.CategoriaSortParm = "categoria_name";
+                    ViewBag.EstabelicimentoSortParm = "estabelicimento_name";
+                    ViewBag.ValorSortParm = "valor";
+                    break;
+                default:
+                    compras = compras.OrderBy(s => s.CompraID);
+                    break;
+            }
+
+            return View(compras);
+
         }
 
         // GET: Compras/Details/5
