@@ -22,3 +22,11 @@ select,
 textarea {
     max-width: 280px;
 }
+
+a:hover{
+    text-decoration:none;
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+}

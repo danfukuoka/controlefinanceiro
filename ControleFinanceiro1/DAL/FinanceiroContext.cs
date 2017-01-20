@@ -24,6 +24,6 @@ namespace ControleFinanceiro1.DAL
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
 
-
+        public System.Data.Entity.DbSet<ControleFinanceiro1.ViewModels.GastosMes> GastosMes { get; set; }
     }
 }

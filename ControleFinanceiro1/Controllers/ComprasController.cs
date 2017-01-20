@@ -30,7 +30,7 @@ namespace ControleFinanceiro1.Controllers
         public ActionResult Index(string sortOrder, string searchString, string page)
         {
 
-            int itens_por_pagina = 5;
+            int itens_por_pagina = 10;
             int num_pages = 0;
         
             var compras = compraRepository.GetCompras();

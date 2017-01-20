@@ -135,6 +135,7 @@
     <Compile Include="Controllers\CategoriasController.cs" />
     <Compile Include="Controllers\ComprasController.cs" />
     <Compile Include="Controllers\EstabelecimentoesController.cs" />
+    <Compile Include="Controllers\GastosMesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\CategoriaRepository.cs" />
     <Compile Include="DAL\CompraRepository.cs" />
@@ -178,11 +179,36 @@
     <Compile Include="Migrations\201701161148581_data2.Designer.cs">
       <DependentUpon>201701161148581_data2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701181912417_gastosmes.cs" />
+    <Compile Include="Migrations\201701181912417_gastosmes.Designer.cs">
+      <DependentUpon>201701181912417_gastosmes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701181924341_gastosmes1.cs" />
+    <Compile Include="Migrations\201701181924341_gastosmes1.Designer.cs">
+      <DependentUpon>201701181924341_gastosmes1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701191144247_dategroup_string.cs" />
+    <Compile Include="Migrations\201701191144247_dategroup_string.Designer.cs">
+      <DependentUpon>201701191144247_dategroup_string.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701191151553_valor_float.cs" />
+    <Compile Include="Migrations\201701191151553_valor_float.Designer.cs">
+      <DependentUpon>201701191151553_valor_float.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701191242128_valor_float1.cs" />
+    <Compile Include="Migrations\201701191242128_valor_float1.Designer.cs">
+      <DependentUpon>201701191242128_valor_float1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701191311129_valor_float2.cs" />
+    <Compile Include="Migrations\201701191311129_valor_float2.Designer.cs">
+      <DependentUpon>201701191311129_valor_float2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Compra.cs" />
     <Compile Include="Models\Estabelecimento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\GastosMes.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -233,6 +259,7 @@
     <Content Include="Views\Estabelecimentoes\Details.cshtml" />
     <Content Include="Views\Estabelecimentoes\Edit.cshtml" />
     <Content Include="Views\Estabelecimentoes\Index.cshtml" />
+    <Content Include="Views\GastosMes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -269,6 +296,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701161148581_data2.resx">
       <DependentUpon>201701161148581_data2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701181912417_gastosmes.resx">
+      <DependentUpon>201701181912417_gastosmes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701181924341_gastosmes1.resx">
+      <DependentUpon>201701181924341_gastosmes1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701191144247_dategroup_string.resx">
+      <DependentUpon>201701191144247_dategroup_string.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701191151553_valor_float.resx">
+      <DependentUpon>201701191151553_valor_float.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701191242128_valor_float1.resx">
+      <DependentUpon>201701191242128_valor_float1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701191311129_valor_float2.resx">
+      <DependentUpon>201701191311129_valor_float2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

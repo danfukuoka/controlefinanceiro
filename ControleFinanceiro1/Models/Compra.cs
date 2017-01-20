@@ -15,8 +15,10 @@ namespace ControleFinanceiro1.Models
         public int EstabelecimentoID { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [DataType(DataType.Date)]
         public DateTime Data { get; set; }
-        [DisplayFormat(DataFormatString = "{0:C0}")]
+        [DisplayFormat(DataFormatString = "{0:n2}",
+            ApplyFormatInEditMode = true)]
         public float Valor { get; set; }
 
 

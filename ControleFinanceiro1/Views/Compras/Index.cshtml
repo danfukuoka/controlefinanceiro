@@ -4,24 +4,49 @@
     ViewBag.Title = "Compras";
 }
 
-<h2>Compras</h2>
-
-<p>
-    <!-- @Html.ActionLink("Adicionar", "Create") -->
-    <button type="button" class="btn btn-success" onclick="location.href = 'Compras/Create';"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Adicionar</button>
-
-</p>
+<h3 style="background-color: #337ab7;color: #fff;padding: 3px;">Compras</h3>
 
 @using (Html.BeginForm("Index", "Compras", FormMethod.Get))
 {
     <p>
-        Filtro: @Html.TextBox("SearchString")
-        <input type="submit" value="Search" />
+        <div class="col-md-6 text-left" style="padding-top:21px; padding-left:0px">
+            @Html.TextBox("SearchString")
+            <input type="submit" value="Filtrar" />
+        </div>
+
+        <div class="col-md-6 text-right">
+            <ul class="pagination">
+                @if (ViewBag.page != 1)
+                {
+                    <li>
+                        @Html.ActionLink("«", "Index", new { sortOrder = ViewBag.SortParm, page = ViewBag.page - 1, SearchString = ViewBag.CurrentFilter })
+                    </li>
+                }
+
+
+                @for (var i = 1; i <= ViewBag.num_pages; i++)
+                {
+
+                    <li @{if (ViewBag.page == i) { <text> class="active" </text>  }}>
+                        @Html.ActionLink(i.ToString(), "Index", new { sortOrder = ViewBag.SortParm, page = i, SearchString = ViewBag.CurrentFilter })
+                    </li>
+    }
+
+                @if (ViewBag.page != ViewBag.num_pages)
+                {
+                    <li>
+                        @Html.ActionLink("»", "Index", new { sortOrder = ViewBag.SortParm, page = ViewBag.page + 1, SearchString = ViewBag.CurrentFilter })
+                    </li>
+                }
+
+            </ul>
+        </div>
+
     </p>
 }
 
 
-<table class="table" >
+<table class="table table-striped" >
     <tr>
         <th>
             @Html.ActionLink("Categoria", "Index", new { sortOrder = ViewBag.CategoriaSortParm, SearchString = ViewBag.CurrentFilter, page= ViewBag.page})
@@ -53,43 +78,21 @@
             @Html.DisplayFor(modelItem => item.Valor)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CompraID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CompraID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CompraID })
+            @Html.ActionLink(" ", "Details", new { id = item.CompraID }, new { @class = "glyphicon glyphicon-eye-open" }) |
+            @Html.ActionLink(" ", "Edit", new { id=item.CompraID }, new { @class= "glyphicon glyphicon-pencil" }) |
+            @Html.ActionLink(" ", "Delete", new { id=item.CompraID }, new { @class = "glyphicon glyphicon-trash" })
         </td>
     </tr>
 }
 
 </table>
 
+
+
 <br />
 
+<p class="text-right">
+    <!-- @Html.ActionLink("Adicionar", "Create") -->
+    <button type="button" class="btn btn-success" onclick="location.href = 'Compras/Create';"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Adicionar</button>
 
-
-<nav aria-label="Page navigation" class="text-right">
-    <ul class="pagination">
-        @if (ViewBag.page != 1)
-        {
-            <li>
-                @Html.ActionLink("«", "Index", new { sortOrder = ViewBag.SortParm, page = ViewBag.page-1, SearchString = ViewBag.CurrentFilter })
-            </li>
-        }
-
-       
-        @for (var i = 1; i <= ViewBag.num_pages; i++)
-        {
-
-                <li @{if (ViewBag.page == i) { <text>class="active"</text> }}>
-                    @Html.ActionLink(i.ToString(), "Index", new { sortOrder = ViewBag.SortParm, page = i, SearchString = ViewBag.CurrentFilter })
-                </li>
-        }
-
-        @if (ViewBag.page != ViewBag.num_pages)
-        {
-            <li>
-                @Html.ActionLink("»", "Index", new { sortOrder = ViewBag.SortParm, page = ViewBag.page +1, SearchString = ViewBag.CurrentFilter })
-            </li>
-        }
-
-    </ul>
-</nav>
+</p>
