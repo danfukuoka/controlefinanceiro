@@ -8,6 +8,7 @@ namespace ControleFinanceiro1.ViewModels
 {
     public class GastosMes
     {
+
         public int GastosMesID { get; set; }
         public int Dia { get; set; }
 

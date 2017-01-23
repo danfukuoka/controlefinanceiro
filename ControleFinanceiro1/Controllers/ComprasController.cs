@@ -10,6 +10,7 @@ using ControleFinanceiro1.DAL;
 using ControleFinanceiro1.Models;
 
 using PagedList;
+using System.Data.SqlClient;
 
 namespace ControleFinanceiro1.Controllers
 {
@@ -18,17 +19,20 @@ namespace ControleFinanceiro1.Controllers
         private ICompraRepository compraRepository;
         private ICategoriaRepository categoriaRepository;
         private IEstabelecimentoRepository estabelecimentoRepository;
+        private FinanceiroContext context;
 
         public ComprasController()
         {
-            this.compraRepository = new CompraRepository(new FinanceiroContext());
-            this.categoriaRepository = new CategoriaRepository(new FinanceiroContext());
-            this.estabelecimentoRepository = new EstabelecimentoRepository(new FinanceiroContext());
+            context = new FinanceiroContext();
+            this.compraRepository = new CompraRepository(context);
+            this.categoriaRepository = new CategoriaRepository(context);
+            this.estabelecimentoRepository = new EstabelecimentoRepository(context);
         }
 
         // GET: Compras
         public ActionResult Index(string sortOrder, string searchString, string page)
         {
+
 
             int itens_por_pagina = 10;
             int num_pages = 0;
@@ -172,7 +176,11 @@ namespace ControleFinanceiro1.Controllers
             {
                 compraRepository.InsertCompra(compra);
                 compraRepository.SaveCompra();
+
+                LogOp(String.Format("Compra (ID: {0})", compra.CompraID), String.Format("Adição: {0} - R$ {1:N}", estabelecimentoRepository.GetEstabelecimentoByID(compraRepository.GetCompraByID(compra.CompraID).EstabelecimentoID).Nome, compra.Valor));
+
                 return RedirectToAction("Index");
+
             }
 
             ViewBag.CategoriaID = new SelectList(categoriaRepository.GetCategorias(), "CategoriaID", "Nome", compra.CategoriaID);
@@ -200,10 +208,15 @@ namespace ControleFinanceiro1.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "CompraID,CategoriaID,EstabelecimentoID,Data,Valor")] Compra compra)
         {
+            
             if (ModelState.IsValid)
             {
+
+
                 compraRepository.UpdateCompra(compra);
                 compraRepository.SaveCompra();
+
+                LogOp(String.Format("Compra (ID: {0})", compra.CompraID), String.Format("Edição: Alterou Valor para R$ {0:N}", compra.Valor));
 
                 return RedirectToAction("Index");
             }
@@ -230,6 +243,9 @@ namespace ControleFinanceiro1.Controllers
         {
             compraRepository.DeleteCompra(id);
             compraRepository.SaveCompra();
+
+            LogOp(String.Format("Compra (ID: {0})", id), String.Format("Apagada."));
+
             return RedirectToAction("Index");
         }
 
@@ -240,6 +256,19 @@ namespace ControleFinanceiro1.Controllers
                 compraRepository.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        //STORED PROCEDURE
+        protected int LogOp(string Operacao, string Identificacao)
+        {
+            context.Database.ExecuteSqlCommand(
+                "exec LogOperacao @Operacao, @Identificacao",
+                new SqlParameter("@Operacao", Operacao),
+                new SqlParameter("@Identificacao", Identificacao)
+            );
+
+            context.SaveChanges();
+            return 1;
         }
     }
 }

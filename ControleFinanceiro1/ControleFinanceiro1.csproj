@@ -34,6 +34,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -137,13 +138,14 @@
     <Compile Include="Controllers\EstabelecimentoesController.cs" />
     <Compile Include="Controllers\GastosMesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="DAL\CategoriaRepository.cs" />
-    <Compile Include="DAL\CompraRepository.cs" />
-    <Compile Include="DAL\EstabelecimentoRepository.cs" />
-    <Compile Include="DAL\FinanceiroContext.cs" />
-    <Compile Include="DAL\ICategoriaRepository.cs" />
-    <Compile Include="DAL\ICompraRepository.cs" />
-    <Compile Include="DAL\IEstabelecimentoRepository.cs" />
+    <Compile Include="Controllers\LogsController.cs" />
+    <Compile Include="Models\DAL\CategoriaRepository.cs" />
+    <Compile Include="Models\DAL\CompraRepository.cs" />
+    <Compile Include="Models\DAL\EstabelecimentoRepository.cs" />
+    <Compile Include="Models\DAL\FinanceiroContext.cs" />
+    <Compile Include="Models\DAL\ICategoriaRepository.cs" />
+    <Compile Include="Models\DAL\ICompraRepository.cs" />
+    <Compile Include="Models\DAL\IEstabelecimentoRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -203,10 +205,43 @@
     <Compile Include="Migrations\201701191311129_valor_float2.Designer.cs">
       <DependentUpon>201701191311129_valor_float2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701201837429_log3.cs" />
+    <Compile Include="Migrations\201701201837429_log3.Designer.cs">
+      <DependentUpon>201701201837429_log3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701201840381_log4.cs" />
+    <Compile Include="Migrations\201701201840381_log4.Designer.cs">
+      <DependentUpon>201701201840381_log4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701201843161_log_teste.cs" />
+    <Compile Include="Migrations\201701201843161_log_teste.Designer.cs">
+      <DependentUpon>201701201843161_log_teste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701201845006_log_teste2.cs" />
+    <Compile Include="Migrations\201701201845006_log_teste2.Designer.cs">
+      <DependentUpon>201701201845006_log_teste2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701201850357_log_teste3.cs" />
+    <Compile Include="Migrations\201701201850357_log_teste3.Designer.cs">
+      <DependentUpon>201701201850357_log_teste3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701201854232_log_test4.cs" />
+    <Compile Include="Migrations\201701201854232_log_test4.Designer.cs">
+      <DependentUpon>201701201854232_log_test4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701201856093_teste231.cs" />
+    <Compile Include="Migrations\201701201856093_teste231.Designer.cs">
+      <DependentUpon>201701201856093_teste231.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701201909197_teste232.cs" />
+    <Compile Include="Migrations\201701201909197_teste232.Designer.cs">
+      <DependentUpon>201701201909197_teste232.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Compra.cs" />
     <Compile Include="Models\Estabelecimento.cs" />
+    <Compile Include="Models\Log.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\GastosMes.cs" />
   </ItemGroup>
@@ -219,6 +254,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -260,6 +296,8 @@
     <Content Include="Views\Estabelecimentoes\Edit.cshtml" />
     <Content Include="Views\Estabelecimentoes\Index.cshtml" />
     <Content Include="Views\GastosMes\Index.cshtml" />
+    <Content Include="Views\Logs\Details.cshtml" />
+    <Content Include="Views\Logs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -314,6 +352,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701191311129_valor_float2.resx">
       <DependentUpon>201701191311129_valor_float2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701201837429_log3.resx">
+      <DependentUpon>201701201837429_log3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701201840381_log4.resx">
+      <DependentUpon>201701201840381_log4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701201843161_log_teste.resx">
+      <DependentUpon>201701201843161_log_teste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701201845006_log_teste2.resx">
+      <DependentUpon>201701201845006_log_teste2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701201850357_log_teste3.resx">
+      <DependentUpon>201701201850357_log_teste3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701201854232_log_test4.resx">
+      <DependentUpon>201701201854232_log_test4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701201856093_teste231.resx">
+      <DependentUpon>201701201856093_teste231.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701201909197_teste232.resx">
+      <DependentUpon>201701201909197_teste232.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
