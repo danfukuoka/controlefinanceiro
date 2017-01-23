@@ -30,3 +30,15 @@ a:hover{
 .navbar-inverse .navbar-brand {
     color: white;
 }
+
+.cinza{
+    color: #333333;
+}
+
+.page_header{
+    background-color: #337ab7;color: #fff;padding: 3px;
+}
+
+.float_left{
+    float:left;
+}

@@ -6,7 +6,7 @@
     float total = 0;
 }
 
-<h2>Resumo</h2>
+<h3 style="background-color: #337ab7;color: #fff;padding: 3px;">Resumo</h3>
 
 
 @{var items = Model.ToList(); List<int> dicionario = new List<int>(); }
@@ -27,7 +27,7 @@
     var compras_ano_list = items.FindAll(i => i.Ano.Equals(ano));
 
 
-    <div class="panel panel-primary table-responsive">
+    <div class="panel panel-info table-responsive">
         <div class="panel-heading">@ano</div>
         <table class="table table-striped table-hover table-condensed">
             <thead>

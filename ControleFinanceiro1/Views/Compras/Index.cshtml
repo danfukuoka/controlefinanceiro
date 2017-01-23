@@ -4,7 +4,7 @@
     ViewBag.Title = "Compras";
 }
 
-<h3 style="background-color: #337ab7;color: #fff;padding: 3px;">Compras</h3>
+<h3 class="page_header">Compras</h3>
 
 @using (Html.BeginForm("Index", "Compras", FormMethod.Get))
 {
@@ -78,9 +78,9 @@
             @Html.DisplayFor(modelItem => item.Valor)
         </td>
         <td>
-            @Html.ActionLink(" ", "Details", new { id = item.CompraID }, new { @class = "glyphicon glyphicon-eye-open" }) |
-            @Html.ActionLink(" ", "Edit", new { id=item.CompraID }, new { @class= "glyphicon glyphicon-pencil" }) |
-            @Html.ActionLink(" ", "Delete", new { id=item.CompraID }, new { @class = "glyphicon glyphicon-trash" })
+            @Html.ActionLink(" ", "Details", new { id = item.CompraID }, new { @class = "glyphicon glyphicon-eye-open cinza" }) |
+            @Html.ActionLink(" ", "Edit", new { id=item.CompraID }, new { @class= "glyphicon glyphicon-pencil cinza" }) |
+            @Html.ActionLink(" ", "Delete", new { id=item.CompraID }, new { @class = "glyphicon glyphicon-trash cinza" })
         </td>
     </tr>
 }

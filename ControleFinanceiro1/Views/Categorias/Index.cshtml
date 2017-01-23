@@ -4,13 +4,10 @@
     ViewBag.Title = "Categorias";
 }
 
-<h2>Categorias</h2>
+<h3 style="background-color: #337ab7;color: #fff;padding: 3px;">Categorias</h3>
 
-<p>
-    <!-- @Html.ActionLink("Adicionar", "Create") -->
-    <button type="button" class="btn btn-success" onclick="location.href = 'Categorias/Create';"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Adicionar</button>
+<br />
 
-</p>
 <table class="table">
     <tr>
         <th>
@@ -34,3 +31,11 @@
 }
 
 </table>
+
+<br />
+
+<p class="text-right">
+    <!-- @Html.ActionLink("Adicionar", "Create") -->
+    <button type="button" class="btn btn-success" onclick="location.href = 'Categorias/Create';"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Adicionar</button>
+
+</p>
