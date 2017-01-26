@@ -6,8 +6,6 @@
 
 <h3 style="background-color: #337ab7;color: #fff;padding: 3px;">Estabelecimentos</h3>
 
-<br />
-
 <table class="table">
     <tr>
         <th>    
@@ -22,9 +20,9 @@
             @Html.DisplayFor(modelItem => item.Nome)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.EstabelecimentoID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.EstabelecimentoID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.EstabelecimentoID })
+            @Html.ActionLink(" ", "Details", new { id = item.EstabelecimentoID }, new { @class = "glyphicon glyphicon-eye-open cinza" }) |
+            @Html.ActionLink(" ", "Edit", new { id = item.EstabelecimentoID }, new { @class = "glyphicon glyphicon-pencil cinza" }) |
+            @Html.ActionLink(" ", "Delete", new { id=item.EstabelecimentoID }, new { @class = "glyphicon glyphicon-trash cinza" })
         </td>
     </tr>
 }

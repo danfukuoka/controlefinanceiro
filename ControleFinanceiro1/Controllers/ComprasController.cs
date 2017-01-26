@@ -48,22 +48,6 @@ namespace ControleFinanceiro1.Controllers
                                        || s.Estabelecimento.Nome.Contains(searchString));
             }
 
-            //Paginação
-            if (String.IsNullOrEmpty(page))
-            {
-                page = "1";
-            }
-
-            num_pages = compras.Count() / itens_por_pagina;
-            if ((compras.Count() % itens_por_pagina) != 0)
-            {
-                num_pages = num_pages + 1;
-            }
-
-            ViewBag.num_pages = num_pages;
-            ViewBag.page = Int32.Parse(page);
-
-            compras = compras.Skip((Int32.Parse(page) - 1) * itens_por_pagina).Take(itens_por_pagina);
 
             //Ordenação
             ViewBag.SortParm = sortOrder;
@@ -136,9 +120,27 @@ namespace ControleFinanceiro1.Controllers
                     ViewBag.ValorSortParm = "valor";
                     break;
                 default:
-                    compras = compras.OrderBy(s => s.CompraID);
+                    compras = compras.OrderByDescending(s => s.Data);
                     break;
             }
+
+            //Paginação
+            if (String.IsNullOrEmpty(page))
+            {
+                page = "1";
+            }
+
+            num_pages = compras.Count() / itens_por_pagina;
+
+            if ((compras.Count() % itens_por_pagina) != 0)
+            {
+                num_pages = num_pages + 1;
+            }
+
+            ViewBag.num_pages = num_pages;
+            ViewBag.page = Int32.Parse(page);
+
+            compras = compras.Skip((Int32.Parse(page) - 1) * itens_por_pagina).Take(itens_por_pagina);
 
             return View(compras);
 

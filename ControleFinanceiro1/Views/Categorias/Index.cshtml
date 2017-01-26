@@ -6,8 +6,6 @@
 
 <h3 style="background-color: #337ab7;color: #fff;padding: 3px;">Categorias</h3>
 
-<br />
-
 <table class="table">
     <tr>
         <th>
@@ -23,9 +21,10 @@
         </td>
         <td>
            
-            @Html.ActionLink("Editar", "Edit", new { id=item.CategoriaID }) |
-            @Html.ActionLink("Detalhes", "Details", new { id=item.CategoriaID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CategoriaID })
+            @Html.ActionLink(" ", "Details", new { id = item.CategoriaID }, new { @class = "glyphicon glyphicon-eye-open cinza" }) |
+            @Html.ActionLink(" ", "Edit", new { id = item.CategoriaID }, new { @class = "glyphicon glyphicon-pencil cinza" }) |
+            @Html.ActionLink(" ", "Delete", new { id=item.CategoriaID }, new { @class = "glyphicon glyphicon-trash cinza" })
+
         </td>
     </tr>
 }

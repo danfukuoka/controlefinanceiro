@@ -42,3 +42,9 @@ a:hover{
 .float_left{
     float:left;
 }
+
+.tag_red{
+    background-color: red !important;
+    color: white;
+    padding: 2px;
+}

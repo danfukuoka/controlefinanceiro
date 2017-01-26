@@ -7,13 +7,13 @@ namespace ControleFinanceiro1.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class teste232 : IMigrationMetadata
+    public sealed partial class required_campos : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(teste232));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(required_campos));
         
         string IMigrationMetadata.Id
         {
-            get { return "201701201909197_teste232"; }
+            get { return "201701231914467_required_campos"; }
         }
         
         string IMigrationMetadata.Source

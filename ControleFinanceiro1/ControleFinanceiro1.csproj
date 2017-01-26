@@ -139,6 +139,14 @@
     <Compile Include="Controllers\GastosMesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LogsController.cs" />
+    <Compile Include="Models\Migrations\201701231649208_display_name_compra.cs" />
+    <Compile Include="Models\Migrations\201701231649208_display_name_compra.Designer.cs">
+      <DependentUpon>201701231649208_display_name_compra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Migrations\201701231914467_required_campos.cs" />
+    <Compile Include="Models\Migrations\201701231914467_required_campos.Designer.cs">
+      <DependentUpon>201701231914467_required_campos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\DAL\CategoriaRepository.cs" />
     <Compile Include="Models\DAL\CompraRepository.cs" />
     <Compile Include="Models\DAL\EstabelecimentoRepository.cs" />
@@ -149,95 +157,91 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701131252336_InitialCreate.cs" />
-    <Compile Include="Migrations\201701131252336_InitialCreate.Designer.cs">
+    <Compile Include="Models\Migrations\201701131252336_InitialCreate.cs" />
+    <Compile Include="Models\Migrations\201701131252336_InitialCreate.Designer.cs">
       <DependentUpon>201701131252336_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701131543290_Conserto do nome Estabelicimento2.cs" />
-    <Compile Include="Migrations\201701131543290_Conserto do nome Estabelicimento2.Designer.cs">
+    <Compile Include="Models\Migrations\201701131543290_Conserto do nome Estabelicimento2.cs" />
+    <Compile Include="Models\Migrations\201701131543290_Conserto do nome Estabelicimento2.Designer.cs">
       <DependentUpon>201701131543290_Conserto do nome Estabelicimento2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701131603544_valor.cs" />
-    <Compile Include="Migrations\201701131603544_valor.Designer.cs">
+    <Compile Include="Models\Migrations\201701131603544_valor.cs" />
+    <Compile Include="Models\Migrations\201701131603544_valor.Designer.cs">
       <DependentUpon>201701131603544_valor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701131631539_add_dinheiro.cs" />
-    <Compile Include="Migrations\201701131631539_add_dinheiro.Designer.cs">
+    <Compile Include="Models\Migrations\201701131631539_add_dinheiro.cs" />
+    <Compile Include="Models\Migrations\201701131631539_add_dinheiro.Designer.cs">
       <DependentUpon>201701131631539_add_dinheiro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701131729435_add_data.cs" />
-    <Compile Include="Migrations\201701131729435_add_data.Designer.cs">
+    <Compile Include="Models\Migrations\201701131729435_add_data.cs" />
+    <Compile Include="Models\Migrations\201701131729435_add_data.Designer.cs">
       <DependentUpon>201701131729435_add_data.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701131757069_add_data2.cs" />
-    <Compile Include="Migrations\201701131757069_add_data2.Designer.cs">
+    <Compile Include="Models\Migrations\201701131757069_add_data2.cs" />
+    <Compile Include="Models\Migrations\201701131757069_add_data2.Designer.cs">
       <DependentUpon>201701131757069_add_data2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701161146155_data.cs" />
-    <Compile Include="Migrations\201701161146155_data.Designer.cs">
+    <Compile Include="Models\Migrations\201701161146155_data.cs" />
+    <Compile Include="Models\Migrations\201701161146155_data.Designer.cs">
       <DependentUpon>201701161146155_data.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701161148581_data2.cs" />
-    <Compile Include="Migrations\201701161148581_data2.Designer.cs">
+    <Compile Include="Models\Migrations\201701161148581_data2.cs" />
+    <Compile Include="Models\Migrations\201701161148581_data2.Designer.cs">
       <DependentUpon>201701161148581_data2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701181912417_gastosmes.cs" />
-    <Compile Include="Migrations\201701181912417_gastosmes.Designer.cs">
+    <Compile Include="Models\Migrations\201701181912417_gastosmes.cs" />
+    <Compile Include="Models\Migrations\201701181912417_gastosmes.Designer.cs">
       <DependentUpon>201701181912417_gastosmes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701181924341_gastosmes1.cs" />
-    <Compile Include="Migrations\201701181924341_gastosmes1.Designer.cs">
+    <Compile Include="Models\Migrations\201701181924341_gastosmes1.cs" />
+    <Compile Include="Models\Migrations\201701181924341_gastosmes1.Designer.cs">
       <DependentUpon>201701181924341_gastosmes1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701191144247_dategroup_string.cs" />
-    <Compile Include="Migrations\201701191144247_dategroup_string.Designer.cs">
+    <Compile Include="Models\Migrations\201701191144247_dategroup_string.cs" />
+    <Compile Include="Models\Migrations\201701191144247_dategroup_string.Designer.cs">
       <DependentUpon>201701191144247_dategroup_string.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701191151553_valor_float.cs" />
-    <Compile Include="Migrations\201701191151553_valor_float.Designer.cs">
+    <Compile Include="Models\Migrations\201701191151553_valor_float.cs" />
+    <Compile Include="Models\Migrations\201701191151553_valor_float.Designer.cs">
       <DependentUpon>201701191151553_valor_float.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701191242128_valor_float1.cs" />
-    <Compile Include="Migrations\201701191242128_valor_float1.Designer.cs">
+    <Compile Include="Models\Migrations\201701191242128_valor_float1.cs" />
+    <Compile Include="Models\Migrations\201701191242128_valor_float1.Designer.cs">
       <DependentUpon>201701191242128_valor_float1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701191311129_valor_float2.cs" />
-    <Compile Include="Migrations\201701191311129_valor_float2.Designer.cs">
+    <Compile Include="Models\Migrations\201701191311129_valor_float2.cs" />
+    <Compile Include="Models\Migrations\201701191311129_valor_float2.Designer.cs">
       <DependentUpon>201701191311129_valor_float2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701201837429_log3.cs" />
-    <Compile Include="Migrations\201701201837429_log3.Designer.cs">
+    <Compile Include="Models\Migrations\201701201837429_log3.cs" />
+    <Compile Include="Models\Migrations\201701201837429_log3.Designer.cs">
       <DependentUpon>201701201837429_log3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701201840381_log4.cs" />
-    <Compile Include="Migrations\201701201840381_log4.Designer.cs">
+    <Compile Include="Models\Migrations\201701201840381_log4.cs" />
+    <Compile Include="Models\Migrations\201701201840381_log4.Designer.cs">
       <DependentUpon>201701201840381_log4.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701201843161_log_teste.cs" />
-    <Compile Include="Migrations\201701201843161_log_teste.Designer.cs">
+    <Compile Include="Models\Migrations\201701201843161_log_teste.cs" />
+    <Compile Include="Models\Migrations\201701201843161_log_teste.Designer.cs">
       <DependentUpon>201701201843161_log_teste.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701201845006_log_teste2.cs" />
-    <Compile Include="Migrations\201701201845006_log_teste2.Designer.cs">
+    <Compile Include="Models\Migrations\201701201845006_log_teste2.cs" />
+    <Compile Include="Models\Migrations\201701201845006_log_teste2.Designer.cs">
       <DependentUpon>201701201845006_log_teste2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701201850357_log_teste3.cs" />
-    <Compile Include="Migrations\201701201850357_log_teste3.Designer.cs">
+    <Compile Include="Models\Migrations\201701201850357_log_teste3.cs" />
+    <Compile Include="Models\Migrations\201701201850357_log_teste3.Designer.cs">
       <DependentUpon>201701201850357_log_teste3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701201854232_log_test4.cs" />
-    <Compile Include="Migrations\201701201854232_log_test4.Designer.cs">
+    <Compile Include="Models\Migrations\201701201854232_log_test4.cs" />
+    <Compile Include="Models\Migrations\201701201854232_log_test4.Designer.cs">
       <DependentUpon>201701201854232_log_test4.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701201856093_teste231.cs" />
-    <Compile Include="Migrations\201701201856093_teste231.Designer.cs">
+    <Compile Include="Models\Migrations\201701201856093_teste231.cs" />
+    <Compile Include="Models\Migrations\201701201856093_teste231.Designer.cs">
       <DependentUpon>201701201856093_teste231.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701201909197_teste232.cs" />
-    <Compile Include="Migrations\201701201909197_teste232.Designer.cs">
-      <DependentUpon>201701201909197_teste232.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Migrations\Configuration.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Compra.cs" />
     <Compile Include="Models\Estabelecimento.cs" />
@@ -311,71 +315,74 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201701131252336_InitialCreate.resx">
+    <EmbeddedResource Include="Models\Migrations\201701131252336_InitialCreate.resx">
       <DependentUpon>201701131252336_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701131543290_Conserto do nome Estabelicimento2.resx">
+    <EmbeddedResource Include="Models\Migrations\201701131543290_Conserto do nome Estabelicimento2.resx">
       <DependentUpon>201701131543290_Conserto do nome Estabelicimento2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701131603544_valor.resx">
+    <EmbeddedResource Include="Models\Migrations\201701131603544_valor.resx">
       <DependentUpon>201701131603544_valor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701131631539_add_dinheiro.resx">
+    <EmbeddedResource Include="Models\Migrations\201701131631539_add_dinheiro.resx">
       <DependentUpon>201701131631539_add_dinheiro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701131729435_add_data.resx">
+    <EmbeddedResource Include="Models\Migrations\201701131729435_add_data.resx">
       <DependentUpon>201701131729435_add_data.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701131757069_add_data2.resx">
+    <EmbeddedResource Include="Models\Migrations\201701131757069_add_data2.resx">
       <DependentUpon>201701131757069_add_data2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701161146155_data.resx">
+    <EmbeddedResource Include="Models\Migrations\201701161146155_data.resx">
       <DependentUpon>201701161146155_data.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701161148581_data2.resx">
+    <EmbeddedResource Include="Models\Migrations\201701161148581_data2.resx">
       <DependentUpon>201701161148581_data2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701181912417_gastosmes.resx">
+    <EmbeddedResource Include="Models\Migrations\201701181912417_gastosmes.resx">
       <DependentUpon>201701181912417_gastosmes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701181924341_gastosmes1.resx">
+    <EmbeddedResource Include="Models\Migrations\201701181924341_gastosmes1.resx">
       <DependentUpon>201701181924341_gastosmes1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701191144247_dategroup_string.resx">
+    <EmbeddedResource Include="Models\Migrations\201701191144247_dategroup_string.resx">
       <DependentUpon>201701191144247_dategroup_string.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701191151553_valor_float.resx">
+    <EmbeddedResource Include="Models\Migrations\201701191151553_valor_float.resx">
       <DependentUpon>201701191151553_valor_float.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701191242128_valor_float1.resx">
+    <EmbeddedResource Include="Models\Migrations\201701191242128_valor_float1.resx">
       <DependentUpon>201701191242128_valor_float1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701191311129_valor_float2.resx">
+    <EmbeddedResource Include="Models\Migrations\201701191311129_valor_float2.resx">
       <DependentUpon>201701191311129_valor_float2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701201837429_log3.resx">
+    <EmbeddedResource Include="Models\Migrations\201701201837429_log3.resx">
       <DependentUpon>201701201837429_log3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701201840381_log4.resx">
+    <EmbeddedResource Include="Models\Migrations\201701201840381_log4.resx">
       <DependentUpon>201701201840381_log4.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701201843161_log_teste.resx">
+    <EmbeddedResource Include="Models\Migrations\201701201843161_log_teste.resx">
       <DependentUpon>201701201843161_log_teste.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701201845006_log_teste2.resx">
+    <EmbeddedResource Include="Models\Migrations\201701201845006_log_teste2.resx">
       <DependentUpon>201701201845006_log_teste2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701201850357_log_teste3.resx">
+    <EmbeddedResource Include="Models\Migrations\201701201850357_log_teste3.resx">
       <DependentUpon>201701201850357_log_teste3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701201854232_log_test4.resx">
+    <EmbeddedResource Include="Models\Migrations\201701201854232_log_test4.resx">
       <DependentUpon>201701201854232_log_test4.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701201856093_teste231.resx">
+    <EmbeddedResource Include="Models\Migrations\201701201856093_teste231.resx">
       <DependentUpon>201701201856093_teste231.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701201909197_teste232.resx">
-      <DependentUpon>201701201909197_teste232.cs</DependentUpon>
+    <EmbeddedResource Include="Models\Migrations\201701231649208_display_name_compra.resx">
+      <DependentUpon>201701231649208_display_name_compra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Models\Migrations\201701231914467_required_campos.resx">
+      <DependentUpon>201701231914467_required_campos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
