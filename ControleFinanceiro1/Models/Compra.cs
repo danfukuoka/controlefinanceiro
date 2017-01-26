@@ -22,7 +22,7 @@ namespace ControleFinanceiro1.Models
         public DateTime Data { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:n2}",ApplyFormatInEditMode = true)]
-        [RegularExpression(@"^-?\d+(\.\d{2})?$", ErrorMessage = "Valor Inválido. O padrão é xx.xx")]
+        [RegularExpression(@"^-?\d+(\.\d{1,2})?$", ErrorMessage = "Valor Inválido. O padrão é xx.xx")]
         [Required(ErrorMessage = "Preencha esse campo.")]
         public float Valor { get; set; }
 

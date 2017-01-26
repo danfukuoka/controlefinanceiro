@@ -9,7 +9,8 @@
 <h3 style="background-color: #337ab7;color: #fff;padding: 3px;">Resumo</h3>
 
 
-@{var items = Model.ToList(); List<int> dicionario = new List<int>(); }
+@{var items = Model.ToList();
+ List<int> dicionario = new List<int>(); }
 
 @for (int j = 0; j < items.Count(); j++)
 {
@@ -24,8 +25,7 @@
 @foreach (var ano in dicionario)
 {
 
-    var compras_ano_list = items.FindAll(i => i.Ano.Equals(ano));
-
+    var compras_ano_list = items.FindAll(i => i.Ano.Equals(ano)).OrderBy(x => x.Mes);
 
     <div class="panel panel-primary table-responsive">
         <div class="panel-heading">@ano</div>
